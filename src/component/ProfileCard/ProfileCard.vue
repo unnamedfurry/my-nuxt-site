@@ -411,12 +411,12 @@ onUnmounted(() => {
     ),
     repeating-linear-gradient(
       var(--angle),
-      #0e152e 0%,
-      hsl(180, 10%, 60%) 3.8%,
-      hsl(180, 29%, 66%) 4.5%,
-      hsl(180, 10%, 60%) 5.2%,
-      #0e152e 10%,
-      #0e152e 12%
+      #282327 0%,
+      hsl(180, 3%, 63%) 3.8%,
+      hsl(180, 5%, 75%) 4.5%,
+      hsl(180, 2%, 63%) 5.2%,
+      #282829 10%,
+      #202020 12%
     ),
     radial-gradient(
       farthest-corner circle at var(--pointer-x) var(--pointer-y),
@@ -500,12 +500,12 @@ onUnmounted(() => {
     ),
     repeating-linear-gradient(
       -45deg,
-      #0e152e 0%,
-      hsl(180, 10%, 60%) 3.8%,
-      hsl(180, 29%, 66%) 4.5%,
-      hsl(180, 10%, 60%) 5.2%,
-      #0e152e 10%,
-      #0e152e 12%
+      #282327 0%,
+      hsl(180, 3%, 63%) 3.8%,
+      hsl(180, 5%, 75%) 4.5%,
+      hsl(180, 2%, 63%) 5.2%,
+      #282829 10%,
+      #202020 12%
     ),
     radial-gradient(
       farthest-corner circle at var(--pointer-x) var(--pointer-y),
@@ -530,8 +530,8 @@ onUnmounted(() => {
   overflow: hidden;
   background-image: radial-gradient(
     farthest-corner circle at var(--pointer-x) var(--pointer-y),
-    hsl(248, 25%, 80%) 12%,
-    hsla(207, 40%, 30%, 0.8) 90%
+    hsl(0, 0%, 85%) 12%,
+    hsla(0, 0%, 41%, 0.8) 90%
   );
   mix-blend-mode: overlay;
   filter: brightness(0.8) contrast(1.2);

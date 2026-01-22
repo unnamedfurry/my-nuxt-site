@@ -73,8 +73,8 @@ export { makeSlot, placeNow };
 import { ref, onMounted, onUnmounted, watch, nextTick, computed, useTemplateRef } from 'vue';
 
 const props = withDefaults(defineProps<CardSwapProps>(), {
-  width: 800,
-  height: 400,
+  width: 900,
+  height: 500,
   cardDistance: 60,
   verticalDistance: 70,
   delay: 3000,
@@ -304,9 +304,9 @@ onUnmounted(() => {
   position: absolute;
   top: 50%;
   left: 50%;
-  border: 1px solid white;
+  border: 0px solid white;
   background: black;
-  border-radius: 12px;
+  border-radius: 32px;
   transform-style: preserve-3d;
   will-change: transform;
   backface-visibility: hidden;

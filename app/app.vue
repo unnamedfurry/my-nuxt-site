@@ -121,7 +121,7 @@
       <div class="cards-skills">
         <CardSwap
             :card-distance="60"
-            :vertical-distance="70"
+            :vertical-distance="90"
             :delay="3000"
             :skew-amount="6"
             easing="elastic"
@@ -400,9 +400,9 @@ a:hover{
 }
 .card-content {
   height: 100%;
-  border-bottom: 1px solid white;
+  border-bottom: 0px solid white;
   background: linear-gradient(to top, #222, #0b0b0b);
-  border-radius: 12px;
+  border-radius: 32px;
   overflow: hidden;
 }
 .card-header {
@@ -412,7 +412,7 @@ a:hover{
   color: gray;
   font-size: 32px;
   font-family: Sans;
-  border-bottom: 1px solid white;
+  border-bottom: 0px solid white;
 }
 .icon {
   width: 60px;
