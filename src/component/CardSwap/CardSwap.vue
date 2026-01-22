@@ -1,22 +1,22 @@
 <template>
   <div
-    ref="containerRef"
-    class="card-swap-container absolute bottom-0 right-0 transform translate-x-[5%] translate-y-[20%] origin-bottom-right perspective-[900px] overflow-visible max-[768px]:translate-x-[25%] max-[768px]:translate-y-[25%] max-[768px]:scale-[0.75] max-[480px]:translate-x-[25%] max-[480px]:translate-y-[25%] max-[480px]:scale-[0.55]"
-    :style="{
+      ref="containerRef"
+      class="card-swap-container"
+      :style="{
       width: typeof width === 'number' ? `${width}px` : width,
       height: typeof height === 'number' ? `${height}px` : height
     }"
   >
     <div
-      v-for="(_, index) in 3"
-      :key="index"
-      ref="cardRefs"
-      class="card-swap-card absolute top-1/2 left-1/2 rounded-xl border border-white bg-black [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden]"
-      :style="{
+        v-for="(_, index) in 4"
+        :key="index"
+        ref="cardRefs"
+        class="card-swap-card"
+        :style="{
         width: typeof width === 'number' ? `${width}px` : width,
         height: typeof height === 'number' ? `${height}px` : height
       }"
-      @click="handleCardClick(index)"
+        @click="handleCardClick(index)"
     >
       <slot :name="`card-${index}`" :index="index" />
     </div>
@@ -73,11 +73,11 @@ export { makeSlot, placeNow };
 import { ref, onMounted, onUnmounted, watch, nextTick, computed, useTemplateRef } from 'vue';
 
 const props = withDefaults(defineProps<CardSwapProps>(), {
-  width: 500,
+  width: 800,
   height: 400,
   cardDistance: 60,
   verticalDistance: 70,
-  delay: 5000,
+  delay: 3000,
   pauseOnHover: false,
   skewAmount: 6,
   easing: 'elastic'
@@ -89,7 +89,7 @@ const emit = defineEmits<{
 
 const containerRef = useTemplateRef<HTMLDivElement>('containerRef');
 const cardRefs = ref<HTMLElement[]>([]);
-const order = ref<number[]>([0, 1, 2]);
+const order = ref<number[]>([0, 1, 2, 3]);
 const tlRef = ref<gsap.core.Timeline | null>(null);
 const intervalRef = ref<number>();
 
@@ -100,7 +100,7 @@ const handleCardClick = (index: number) => {
 
 const config = computed(() => {
   return props.easing === 'elastic'
-    ? {
+      ? {
         ease: 'elastic.out(0.6,0.9)',
         durDrop: 2,
         durMove: 2,
@@ -108,7 +108,7 @@ const config = computed(() => {
         promoteOverlap: 0.9,
         returnDelay: 0.05
       }
-    : {
+      : {
         ease: 'power1.inOut',
         durDrop: 0.8,
         durMove: 0.8,
@@ -172,41 +172,41 @@ const swap = () => {
     const slot = makeSlot(i, props.cardDistance, props.verticalDistance, cardRefs.value.length);
     tl.set(el, { zIndex: slot.zIndex }, 'promote');
     tl.to(
-      el,
-      {
-        x: slot.x,
-        y: slot.y,
-        z: slot.z,
-        duration: config.value.durMove,
-        ease: config.value.ease
-      },
-      `promote+=${i * 0.15}`
+        el,
+        {
+          x: slot.x,
+          y: slot.y,
+          z: slot.z,
+          duration: config.value.durMove,
+          ease: config.value.ease
+        },
+        `promote+=${i * 0.15}`
     );
   });
 
   const backSlot = makeSlot(
-    cardRefs.value.length - 1,
-    props.cardDistance,
-    props.verticalDistance,
-    cardRefs.value.length
+      cardRefs.value.length - 1,
+      props.cardDistance,
+      props.verticalDistance,
+      cardRefs.value.length
   );
   tl.addLabel('return', `promote+=${config.value.durMove * config.value.returnDelay}`);
   tl.call(
-    () => {
-      gsap.set(elFront, { zIndex: backSlot.zIndex });
-    },
-    undefined,
-    'return'
+      () => {
+        gsap.set(elFront, { zIndex: backSlot.zIndex });
+      },
+      undefined,
+      'return'
   );
   tl.set(elFront, { x: backSlot.x, z: backSlot.z }, 'return');
   tl.to(
-    elFront,
-    {
-      y: backSlot.y,
-      duration: config.value.durReturn,
-      ease: config.value.ease
-    },
-    'return'
+      elFront,
+      {
+        y: backSlot.y,
+        duration: config.value.durReturn,
+        ease: config.value.ease
+      },
+      'return'
   );
 
   tl.call(() => {
@@ -247,33 +247,33 @@ const removeHoverListeners = () => {
 };
 
 watch(
-  () => [props.cardDistance, props.verticalDistance, props.skewAmount],
-  () => {
-    updateCardPositions();
-  }
-);
-
-watch(
-  () => props.delay,
-  () => {
-    if (intervalRef.value) {
-      clearInterval(intervalRef.value);
-      intervalRef.value = window.setInterval(swap, props.delay);
+    () => [props.cardDistance, props.verticalDistance, props.skewAmount],
+    () => {
+      updateCardPositions();
     }
-  }
 );
 
 watch(
-  () => props.pauseOnHover,
-  () => {
-    removeHoverListeners();
-    setupHoverListeners();
-  }
+    () => props.delay,
+    () => {
+      if (intervalRef.value) {
+        clearInterval(intervalRef.value);
+        intervalRef.value = window.setInterval(swap, props.delay);
+      }
+    }
 );
 
 watch(
-  () => props.easing,
-  () => {}
+    () => props.pauseOnHover,
+    () => {
+      removeHoverListeners();
+      setupHoverListeners();
+    }
+);
+
+watch(
+    () => props.easing,
+    () => {}
 );
 
 onMounted(() => {
@@ -289,3 +289,41 @@ onUnmounted(() => {
   removeHoverListeners();
 });
 </script>
+
+<style scoped>
+.card-swap-container {
+  bottom: 0;
+  right: 0;
+  transform: translateX(5%) translateY(20%);
+  transform-origin: bottom right;
+  perspective: 900px;
+  overflow: visible;
+}
+
+.card-swap-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid white;
+  background: black;
+  border-radius: 12px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .card-swap-container {
+    transform: translateX(25%) translateY(25%);
+    scale: 0.75;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-swap-container {
+    transform: translateX(25%) translateY(25%);
+    scale: 0.55;
+  }
+}
+</style>

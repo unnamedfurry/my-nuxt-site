@@ -75,6 +75,11 @@
     </div>
     <div class="my-projects">
       <p class="projects-header">My projects :3</p>
+      <GlassSurface
+          :width="700"
+          :height="120"
+          :border-radius="16"
+          class="glass-2"/>
       <div class="cards-projects">
         <ProfileCard
             name="BLV Bot"
@@ -86,7 +91,7 @@
             icon-url=""
             grain-url=""
             :show-user-info="true"
-            :show-behind-gradient="true"
+            :show-behind-gradient="false"
             :enable-tilt="true"
             class="bot-card"
         />
@@ -100,7 +105,7 @@
           icon-url=""
           grain-url=""
           :show-user-info="true"
-          :show-behind-gradient="true"
+          :show-behind-gradient="false"
           :enable-tilt="true"
           class="site-card"
       />
@@ -108,18 +113,61 @@
     </div>
     <div class="my-skills">
       <p class="skills-header">My skills :3</p>
+      <GlassSurface
+          :width="600"
+          :height="120"
+          :border-radius="16"
+          class="glass-3"/>
       <div class="cards-skills">
-        <BounceCards
-            :images="images"
-            :container-width="500"
-            :container-height="250"
-            :animation-delay="0.5"
-            :animation-stagger="0.06"
-            ease-type="elastic.out(1, 0.8)"
-            :transform-styles="transformStyles"
-            :enable-hover="true"
-            class="custom-bounce-cards"
-        />
+        <CardSwap
+            :card-distance="60"
+            :vertical-distance="70"
+            :delay="3000"
+            :skew-amount="6"
+            easing="elastic"
+            :pause-on-hover="false"
+            class="skills"
+        >
+          <template #card-0>
+            <div class="card-content">
+              <div class="card-header">
+                <img class="pi pi-circle-fill icon" src="/java.png" alt="">
+                <span>Java</span>
+              </div>
+              <img src="/java-bg.jpg" alt="" class="card-bg">
+            </div>
+          </template>
+
+          <template #card-1>
+            <div class="card-content">
+              <div class="card-header">
+                <img class="pi pi-code icon" src="/javafx.png" alt="">
+                <span>JavaFX</span>
+              </div>
+              <img src="/javafx-bg.jpg" alt="" class="card-bg">
+            </div>
+          </template>
+
+          <template #card-2>
+            <div class="card-content">
+              <div class="card-header">
+                <img class="pi pi-sliders-h icon" src="/html.png" alt="">
+                <span>HTML/CSS</span>
+              </div>
+              <img src="/html-bg.jpg" alt="" class="card-bg">
+            </div>
+          </template>
+
+          <template #card-3>
+            <div class="card-content">
+              <div class="card-header">
+                <img class="pi pi-sliders-h icon" src="/vue.png" alt="">
+                <span>VUE</span>
+              </div>
+              <img src="/vue-bg.jpg" alt="" class="card-bg">
+            </div>
+          </template>
+        </CardSwap>
       </div>
     </div>
   </div>
@@ -302,6 +350,12 @@ a:hover{
   padding-left: 34%;
   padding-bottom: 120px;
 }
+.glass-2{
+  position: absolute;
+  display: flex;
+  margin-top: -210px;
+  margin-left: 600px;
+}
 .cards-projects{
   display: flex;
   justify-content: center;
@@ -316,9 +370,9 @@ a:hover{
 }
 .my-skills{
   padding-top: 14%;
-  display: block;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
 }
 .skills-header{
@@ -326,18 +380,56 @@ a:hover{
   color: white;
   font-size: 72px;
   font-family: FreeMono;
-  margin: 0 auto;
-  padding-left: 36%;
   padding-bottom: 120px;
+  padding-left: 180px;
+}
+.glass-3{
+  position: absolute;
+  display: flex;
+  margin-top: -120px;
+  margin-left: 140px;
 }
 .cards-skills{
   display: flex;
   justify-content: center;
   position: relative;
+  padding-right: 120px;
 }
 .skills{
-  width: 400px;
-  pointer-events: all;
+  padding-top: 80px;
+}
+.card-content {
+  height: 100%;
+  border-bottom: 1px solid white;
+  background: linear-gradient(to top, #222, #0b0b0b);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.card-header {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  color: gray;
+  font-size: 32px;
+  font-family: Sans;
+  border-bottom: 1px solid white;
+}
+.icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 8px;
+  font-size: 1.25rem;
+  border-radius: 32px;
+}
+.card-header span {
+  padding-left: 16px;
+}
+.card-header * {
+  color: white;
+}
+.card-bg{
+  width: 100%;
+  height: 100%;
 }
 </style>
 
@@ -347,20 +439,5 @@ import LightPillar from "../src/component/LightPillar/LightPillar.vue";
 import ClickSpark from "../src/component/ClickSpark/ClickSpark.vue";
 import DecryptedText from "../src/component/DecryptedText/DecryptedText.vue";
 import ProfileCard from "../src/component/ProfileCard/ProfileCard.vue";
-import BounceCards from "../src/component/BounceCards/BounceCards.vue";
-
-const images = [
-  '/java.png',
-  '/javafx.png',
-  '/html.png',
-  '/vue.png',
-];
-
-const transformStyles = [
-  'rotate(5deg) translate(-150px)',
-  'rotate(0deg) translate(-70px)',
-  'rotate(-5deg)',
-  'rotate(5deg) translate(70px)',
-  'rotate(-5deg) translate(150px)'
-];
+import CardSwap from "../src/component/CardSwap/CardSwap.vue";
 </script>

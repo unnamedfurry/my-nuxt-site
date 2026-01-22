@@ -1,0 +1,14 @@
+<template>
+        <FlowingMenu :items="items" class="skills"/>
+</template>
+
+<script>
+import FlowingMenu from "../src/component/FlowingMenu/FlowingMenu.vue";
+
+const items = [
+  { link: '#', text: 'Java', image: '/java.png' },
+  { link: '#', text: 'JavaFX', image: '/javafx.png' },
+  { link: '#', text: 'HTML/CSS', image: '/html.png' },
+  { link: '#', text: 'VUE', image: '/vue.png' }
+];
+</script>
