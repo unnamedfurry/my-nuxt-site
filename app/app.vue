@@ -1,0 +1,376 @@
+<template>
+  <LightPillar
+        topColor="#ffd700"
+        bottomColor="#b8860b"
+        :intensity="1.0"
+        :rotationSpeed="0.3"
+        :glowAmount="0.005"
+        :pillarWidth="3.0"
+        :pillarHeight="0.4"
+        :noiseIntensity="0.5"
+        :pillarRotation="25"
+        :interactive="false"
+        mixBlendMode="normal"
+        class="background"/>
+  <ClickSpark
+      spark-color="#ffd700"
+      :spark-size="12"
+      :spark-radius="25"
+      :spark-count="12"
+      :duration="600"
+      easing="ease-out"
+      :extra-scale="1.2"
+      class="clickspark"/>
+
+  <div class="header">
+    <GlassSurface
+        :width="1440"
+        :height="64"
+        :border-radius="24"
+    class="glass"/>
+
+    <div class="header-content">
+      <img src="/avatarka.png" class="header-avatar">
+      <p class="header-about">unnamed_furry</p>
+      <div class="buttons">
+        <a href="https://discord.gg/VDQxDtPde5" target="_blank">
+          <div class="discord-button">
+            <img src="/discord.png" class="discord-icon">
+            <p class="discord-text">Discord</p>
+          </div>
+        </a>
+        <a href="https://github.com/unnamedfurry/" target="_blank">
+          <div class="github-button">
+            <img src="/github.png" class="github-icon">
+            <p class="github-text">Github</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="welcome">
+      <p class="welcome-1">Hi!</p>
+      <p class="welcome-2">I'm <span class="welcome-cursive">Daniel</span> and welcome to my <span class="welcome-cursive">BIO</span> :yaaaay:</p>
+    </div>
+    <div class="about-me">
+      <DecryptedText
+          text="I'm a 15-year-old full-stack dev with a focus on building strong and reliable console applications. I specialize in backend development using Java but also frontend development using Vue & Nuxt. Most of my projects are in the hosting space, where performance, security, and scalability are key."
+          :speed="50"
+          :max-iterations="1"
+          :sequential="true"
+          reveal-direction="start"
+          :use-original-chars-only="false"
+          animate-on="view"
+          class-name="text-green-500"
+          encrypted-class-name="text-red-500"
+          class="short-about-me"
+      />
+      <GlassSurface
+          :width="1500"
+          :height="160"
+          :border-radius="16"
+          class="glass-1"/>
+    </div>
+    <div class="my-projects">
+      <p class="projects-header">My projects :3</p>
+      <div class="cards-projects">
+        <ProfileCard
+            name="BLV Bot"
+            title="Discord Bot"
+            handle=""
+            status="Written on Java with Java Discord Api"
+            contact-text=""
+            avatar-url="/BotLogo.png"
+            icon-url=""
+            grain-url=""
+            :show-user-info="true"
+            :show-behind-gradient="true"
+            :enable-tilt="true"
+            class="bot-card"
+        />
+        <ProfileCard
+          name="This site"
+          title="yeah, that very BIO"
+          handle=""
+          status="Written on VUE with Nuxt"
+          contact-text=""
+          avatar-url="/site-icon.png"
+          icon-url=""
+          grain-url=""
+          :show-user-info="true"
+          :show-behind-gradient="true"
+          :enable-tilt="true"
+          class="site-card"
+      />
+      </div>
+    </div>
+    <div class="my-skills">
+      <p class="projects-header">My skills :3</p>
+      <div class="cards-skills">
+        <CardSwap
+            :card-distance="60"
+            :vertical-distance="70"
+            :delay="3000"
+            :skew-amount="6"
+            easing="elastic"
+            :pause-on-hover="false"
+        >
+          <template #card-0>
+            <div class="border-b border-white bg-gradient-to-t from-[#222] to-[#0b0b0b]">
+              <div class="m-2 flex items-center">
+                <i class="pi pi-circle-fill mr-2"></i>
+                <span>Java</span>
+              </div>
+            </div>
+          </template>
+
+          <template #card-1>
+            <div class="border-b border-white bg-gradient-to-t from-[#222] to-[#0b0b0b]">
+              <div class="m-2 flex items-center">
+                <i class="pi pi-code mr-2"></i>
+                <span>JavaFX</span>
+              </div>
+            </div>
+          </template>
+
+          <template #card-2>
+            <div class="border-b border-white bg-gradient-to-t from-[#222] to-[#0b0b0b]">
+              <div class="m-2 flex items-center">
+                <i class="pi pi-sliders-h mr-2"></i>
+                <span>HTML/CSS</span>
+              </div>
+            </div>
+          </template>
+
+          <template #card-3>
+            <div class="border-b border-white bg-gradient-to-t from-[#222] to-[#0b0b0b]">
+              <div class="m-2 flex items-center">
+                <i class="pi pi-sliders-h mr-2"></i>
+                <span>VUE</span>
+              </div>
+            </div>
+          </template>
+        </CardSwap>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+a{
+  text-decoration: none;
+  color: black;
+  transition: transform 0.3s ease;
+}
+a:hover{
+  transform: scale(0.95);
+}
+.background{
+  position: fixed;
+  width: 1920px;
+  height: 100%;
+}
+.clickspark{
+  position: fixed;
+  width: 1920px;
+  height: 100%;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background-color: transparent;
+  width: 1440px;
+  height: 64px;
+  margin: 0 auto;
+  padding-top: 12px;
+}
+.glass{
+  position: relative;
+  pointer-events: none;
+}
+.header-content{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: start;
+}
+.header-avatar{
+  display: flex;
+  width: 42px;
+  height: 42px;
+  padding: 12px;
+  pointer-events: none;
+}
+.header-about{
+  display: flex;
+  color: gold;
+  font-size: 28px;
+  justify-content: center;
+  align-items: center;
+  font-family: Sans;
+  font-weight: bold;
+  padding-right: 876px;
+  pointer-events: none;
+}
+.buttons{
+  display: flex;
+  padding: 8px;
+  gap: 8px;
+}
+.discord-button{
+  display: flex;
+  align-items: center;
+  background-color: gold;
+  justify-content: center;
+  width: 120px;
+  height: 40px;
+  border-radius: 12px;
+  padding: 4px;
+}
+.discord-icon{
+  display: flex;
+  width: 36px;
+  height: 36px;
+  padding-right: 4px;
+}
+.discord-text{
+  display: flex;
+  font-size: 18px;
+  font-family: Sans;
+  font-weight: bolder;
+  padding-left: 4px;
+}
+.github-button{
+  display: flex;
+  align-items: center;
+  background-color: gold;
+  justify-content: center;
+  width: 120px;
+  height: 40px;
+  border-radius: 12px;
+  padding: 4px;
+}
+.github-icon{
+  display: flex;
+  width: 36px;
+  height: 36px;
+  padding-right: 4px;
+}
+.github-text{
+  display: flex;
+  font-size: 18px;
+  font-family: Sans;
+  font-weight: bolder;
+  padding-left: 4px;
+}
+.main-content{
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.welcome{
+  display: flex;
+}
+.welcome-1{
+  padding-left: 180px;
+  color: white;
+  font-size: 180px;
+  font-family: Sans;
+}
+.welcome-2{
+  padding-top: 180px;
+  padding-left: 160px;
+  color: white;
+  font-size: 64px;
+  font-family: FreeMono;
+  white-space: pre-wrap;
+}
+.welcome-cursive{
+  font-style: italic;
+}
+.about-me{
+  display: flex;
+  width: 1500px;
+  height: 162px;
+  margin: 0 auto;
+}
+.short-about-me{
+  position: relative;
+  color: white;
+  font-family: FreeMono;
+  font-size: 32px;
+  text-align: center;
+  padding: 12px;
+}
+.glass-1{
+  position: absolute;
+  display: flex;
+  margin: 0 auto;
+}
+.my-projects{
+  padding-top: 14%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.projects-header{
+  display: flex;
+  color: white;
+  font-size: 72px;
+  font-family: FreeMono;
+  margin: 0 auto;
+  padding-left: 34%;
+  padding-bottom: 120px;
+}
+.cards-projects{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  gap: 60px;
+}
+.bot-card{
+  pointer-events: all;
+}
+.site-card{
+  pointer-events: all;
+}
+.my-skills{
+  padding-top: 14%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.cards-skills{
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.skills{
+  width: 400px;
+  pointer-events: all;
+  background-color: white;
+}
+</style>
+
+<script setup lang="ts">
+import GlassSurface from "../src/component/GlassSurface/GlassSurface.vue";
+import LightPillar from "../src/component/LightPillar/LightPillar.vue";
+import ClickSpark from "../src/component/ClickSpark/ClickSpark.vue";
+import DecryptedText from "../src/component/DecryptedText/DecryptedText.vue";
+import ProfileCard from "../src/component/ProfileCard/ProfileCard.vue";
+import CardSwap from "../src/component/CardSwap/CardSwap.vue";
+</script>
