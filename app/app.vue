@@ -107,52 +107,19 @@
       </div>
     </div>
     <div class="my-skills">
-      <p class="projects-header">My skills :3</p>
+      <p class="skills-header">My skills :3</p>
       <div class="cards-skills">
-        <CardSwap
-            :card-distance="60"
-            :vertical-distance="70"
-            :delay="3000"
-            :skew-amount="6"
-            easing="elastic"
-            :pause-on-hover="false"
-        >
-          <template #card-0>
-            <div class="border-b border-white bg-gradient-to-t from-[#222] to-[#0b0b0b]">
-              <div class="m-2 flex items-center">
-                <i class="pi pi-circle-fill mr-2"></i>
-                <span>Java</span>
-              </div>
-            </div>
-          </template>
-
-          <template #card-1>
-            <div class="border-b border-white bg-gradient-to-t from-[#222] to-[#0b0b0b]">
-              <div class="m-2 flex items-center">
-                <i class="pi pi-code mr-2"></i>
-                <span>JavaFX</span>
-              </div>
-            </div>
-          </template>
-
-          <template #card-2>
-            <div class="border-b border-white bg-gradient-to-t from-[#222] to-[#0b0b0b]">
-              <div class="m-2 flex items-center">
-                <i class="pi pi-sliders-h mr-2"></i>
-                <span>HTML/CSS</span>
-              </div>
-            </div>
-          </template>
-
-          <template #card-3>
-            <div class="border-b border-white bg-gradient-to-t from-[#222] to-[#0b0b0b]">
-              <div class="m-2 flex items-center">
-                <i class="pi pi-sliders-h mr-2"></i>
-                <span>VUE</span>
-              </div>
-            </div>
-          </template>
-        </CardSwap>
+        <BounceCards
+            :images="images"
+            :container-width="500"
+            :container-height="250"
+            :animation-delay="0.5"
+            :animation-stagger="0.06"
+            ease-type="elastic.out(1, 0.8)"
+            :transform-styles="transformStyles"
+            :enable-hover="true"
+            class="custom-bounce-cards"
+        />
       </div>
     </div>
   </div>
@@ -354,6 +321,15 @@ a:hover{
   justify-content: center;
   width: 100%;
 }
+.skills-header{
+  display: flex;
+  color: white;
+  font-size: 72px;
+  font-family: FreeMono;
+  margin: 0 auto;
+  padding-left: 36%;
+  padding-bottom: 120px;
+}
 .cards-skills{
   display: flex;
   justify-content: center;
@@ -362,7 +338,6 @@ a:hover{
 .skills{
   width: 400px;
   pointer-events: all;
-  background-color: white;
 }
 </style>
 
@@ -372,5 +347,20 @@ import LightPillar from "../src/component/LightPillar/LightPillar.vue";
 import ClickSpark from "../src/component/ClickSpark/ClickSpark.vue";
 import DecryptedText from "../src/component/DecryptedText/DecryptedText.vue";
 import ProfileCard from "../src/component/ProfileCard/ProfileCard.vue";
-import CardSwap from "../src/component/CardSwap/CardSwap.vue";
+import BounceCards from "../src/component/BounceCards/BounceCards.vue";
+
+const images = [
+  '/java.png',
+  '/javafx.png',
+  '/html.png',
+  '/vue.png',
+];
+
+const transformStyles = [
+  'rotate(5deg) translate(-150px)',
+  'rotate(0deg) translate(-70px)',
+  'rotate(-5deg)',
+  'rotate(5deg) translate(70px)',
+  'rotate(-5deg) translate(150px)'
+];
 </script>
