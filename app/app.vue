@@ -125,7 +125,7 @@
             :delay="3000"
             :skew-amount="6"
             easing="elastic"
-            :pause-on-hover="false"
+            :pause-on-hover="true"
             class="skills"
         >
           <template #card-0>
@@ -169,6 +169,37 @@
           </template>
         </CardSwap>
       </div>
+      <div class="skills-space"></div>
+    </div>
+    <div class="continue">
+      <TrueFocus
+          sentence="Thats not all..."
+          :manualMode="true"
+          :blurAmount="5"
+          borderColor="yellow"
+          :animationDuration="0.3"
+          :pauseBetweenAnimations="1"
+          class="continue-1"
+          textSize="6rem"
+      />
+      <TrueFocus
+          sentence="I'll add new pages whenever inspiration strikes XD"
+          :manualMode="true"
+          :blurAmount="5"
+          borderColor="yellow"
+          :animationDuration="0.3"
+          :pauseBetweenAnimations="1"
+          class="continue-2"
+          textSize="3rem"
+      />
+      <GlassSurface
+          :width="1400"
+          :height="220"
+          :border-radius="24"
+          class="glass-4"/>
+    </div>
+    <div class="end">
+      <p>Made with 💚 on <span class="nuxt-word">Nuxt</span></p>
     </div>
   </div>
 </template>
@@ -205,7 +236,7 @@ a:hover{
   width: 1440px;
   height: 64px;
   margin: 0 auto;
-  padding-top: 12px;
+  padding-top: 18px;
 }
 .glass{
   position: relative;
@@ -374,6 +405,7 @@ a:hover{
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding-bottom: 200px;
 }
 .skills-header{
   display: flex;
@@ -397,6 +429,7 @@ a:hover{
 }
 .skills{
   padding-top: 80px;
+  pointer-events: all;
 }
 .card-content {
   height: 100%;
@@ -406,7 +439,7 @@ a:hover{
   overflow: hidden;
 }
 .card-header {
-  padding: 8px;
+  padding: 12px;
   display: flex;
   align-items: center;
   color: gray;
@@ -431,6 +464,41 @@ a:hover{
   width: 100%;
   height: 100%;
 }
+.continue{
+  padding-top: 210px;
+  display: block;
+  width: 100%;
+  pointer-events: all;
+  justify-content: center;
+  white-space: pre-line;
+  padding-bottom: 300px;
+}
+.continue-1{
+  width: 100%;
+}
+.continue-2{
+  width: 100%;
+}
+.glass-4{
+  position: absolute;
+  display: flex;
+  margin-top: -210px;
+  margin-left: 250px;
+  pointer-events: none;
+}
+.end{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.end p{
+  font-size: 20px;
+  font-family: FreeMono;
+  color: white;
+}
+.nuxt-word{
+  color: #00dc82;
+}
 </style>
 
 <script setup lang="ts">
@@ -440,4 +508,5 @@ import ClickSpark from "../src/component/ClickSpark/ClickSpark.vue";
 import DecryptedText from "../src/component/DecryptedText/DecryptedText.vue";
 import ProfileCard from "../src/component/ProfileCard/ProfileCard.vue";
 import CardSwap from "../src/component/CardSwap/CardSwap.vue";
+import TrueFocus from "../src/component/TrueFocus/TrueFocus.vue";
 </script>

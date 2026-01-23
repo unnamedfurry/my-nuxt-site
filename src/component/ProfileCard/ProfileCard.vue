@@ -4,6 +4,7 @@
       <div class="pc-inside">
 
         <div class="pc-glare" />
+        <div class="pc-shine" />
 
         <div class="pc-content pc-avatar-content">
           <img
@@ -412,9 +413,9 @@ onUnmounted(() => {
     repeating-linear-gradient(
       var(--angle),
       #282327 0%,
-      hsl(180, 3%, 63%) 3.8%,
-      hsl(180, 5%, 75%) 4.5%,
-      hsl(180, 2%, 63%) 5.2%,
+      hsl(48, 98%, 32%) 3.8%,
+      hsl(50, 97%, 42%) 4.5%,
+      hsl(45, 95%, 33%) 5.2%,
       #282829 10%,
       #202020 12%
     ),
@@ -445,19 +446,6 @@ onUnmounted(() => {
   opacity: 0;
 }
 
-.pc-card-wrapper:hover .pc-card .pc-shine,
-.pc-card-wrapper.active .pc-card .pc-shine {
-  filter: brightness(0.85) contrast(1.5) saturate(0.5);
-  animation: none;
-}
-
-.pc-card-wrapper:hover .pc-card .pc-shine::before,
-.pc-card-wrapper.active .pc-card .pc-shine::before,
-.pc-card-wrapper:hover .pc-card .pc-shine::after,
-.pc-card-wrapper.active .pc-card .pc-shine::after {
-  opacity: 1;
-}
-
 .pc-shine::before {
   background-image:
     linear-gradient(
@@ -469,7 +457,7 @@ onUnmounted(() => {
       var(--sunpillar-2),
       var(--sunpillar-3)
     ),
-    radial-gradient(circle at var(--pointer-x) var(--pointer-y), hsl(0, 0%, 70%) 0%, hsla(0, 0%, 30%, 0.2) 90%),
+    radial-gradient(circle at var(--pointer-x) var(--pointer-y), hsl(50, 96%, 37%) 0%, hsla(0, 0%, 30%, 0.2) 90%),
     var(--grain);
   background-size:
     250% 250%,
@@ -500,11 +488,11 @@ onUnmounted(() => {
     ),
     repeating-linear-gradient(
       -45deg,
-      #282327 0%,
-      hsl(180, 3%, 63%) 3.8%,
-      hsl(180, 5%, 75%) 4.5%,
-      hsl(180, 2%, 63%) 5.2%,
-      #282829 10%,
+      #282823 0%,
+      hsl(48, 98%, 32%) 3.8%,
+      hsl(50, 97%, 42%) 4.5%,
+      hsl(45, 95%, 33%) 5.2%,
+      #292928 10%,
       #202020 12%
     ),
     radial-gradient(
@@ -530,8 +518,8 @@ onUnmounted(() => {
   overflow: hidden;
   background-image: radial-gradient(
     farthest-corner circle at var(--pointer-x) var(--pointer-y),
-    hsl(0, 0%, 85%) 12%,
-    hsla(0, 0%, 41%, 0.8) 90%
+    hsl(52, 100%, 50%) 12%,
+    hsla(50, 98%, 20%, 0.82) 90%
   );
   mix-blend-mode: overlay;
   filter: brightness(0.8) contrast(1.2);
@@ -577,9 +565,9 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 221, 0, 0.1);
   backdrop-filter: blur(30px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 213, 0, 0.1);
   border-radius: 15px;
   padding: 12px 14px;
   pointer-events: auto;
@@ -596,7 +584,7 @@ onUnmounted(() => {
   height: 48px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 204, 0, 0.1);
   flex-shrink: 0;
 }
 
@@ -617,13 +605,13 @@ onUnmounted(() => {
 .pc-handle {
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 221, 0, 0.9);
   line-height: 1;
 }
 
 .pc-status {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 221, 0, 0.7);
   line-height: 1;
   font-family: Sans;
   padding-left: 34px;
@@ -635,7 +623,7 @@ onUnmounted(() => {
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 213, 0, 0.9);
   cursor: pointer;
   transition: all 0.2s ease;
   backdrop-filter: blur(10px);
@@ -643,7 +631,7 @@ onUnmounted(() => {
 }
 
 .pc-contact-btn:hover {
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 221, 0, 0.4);
   transform: translateY(-1px);
   transition: all 0.2s ease;
 }
