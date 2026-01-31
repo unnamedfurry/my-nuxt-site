@@ -171,6 +171,29 @@
       </div>
       <div class="skills-space"></div>
     </div>
+    <div class="sponsor">
+      <div class="sponsor-top">
+        <p class="sponsor-header">Meet my HSP :3</p>
+        <GlassSurface
+            :width="560"
+            :height="120"
+            :border-radius="16"
+            class="glass-5"/>
+      </div>
+      <div class="lendnodes">
+        <ElectricBorder
+            :color="'#FFD700FF'"
+            :speed="0.4"
+            :chaos="0.6"
+            :thickness="4"
+            class="electricborder"
+        >
+          <div>
+
+          </div>
+        </ElectricBorder>
+      </div>
+    </div>
     <div class="continue">
       <TrueFocus
           sentence="Thats not all..."
@@ -499,6 +522,36 @@ a:hover{
 .nuxt-word{
   color: #00dc82;
 }
+.sponsor{
+  display: block;
+  align-items: center;
+  padding-top: 400px;
+  width: 100%;
+}
+.sponsor-top{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.sponsor-header{
+  color: white;
+  font-size: 56px;
+  font-family: FreeMono;
+  margin-top: -166px;
+}
+.glass-5{
+  position: absolute;
+  display: flex;
+  margin-top: -200px;
+}
+.electricborder{
+  background-color: black;
+  margin: 0 auto;
+  border-radius: 16px;
+  width: 1200px;
+  height: 400px;
+  pointer-events: all;
+}
 </style>
 
 <script setup lang="ts">
@@ -509,4 +562,5 @@ import DecryptedText from "../src/component/DecryptedText/DecryptedText.vue";
 import ProfileCard from "../src/component/ProfileCard/ProfileCard.vue";
 import CardSwap from "../src/component/CardSwap/CardSwap.vue";
 import TrueFocus from "../src/component/TrueFocus/TrueFocus.vue";
+import ElectricBorder from "../src/component/ElectricBorder/ElectricBorder.vue";
 </script>
