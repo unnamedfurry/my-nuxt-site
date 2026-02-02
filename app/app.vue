@@ -125,7 +125,7 @@
             :delay="3000"
             :skew-amount="6"
             easing="elastic"
-            :pause-on-hover="true"
+            :pause-on-hover="false"
             class="skills"
         >
           <template #card-0>
@@ -171,9 +171,9 @@
       </div>
       <div class="skills-space"></div>
     </div>
-    <div class="sponsor">
-      <div class="sponsor-top">
-        <p class="sponsor-header">Meet my HSP :3</p>
+    <div class="whyblocked">
+      <div class="lendnodes-top">
+        <p class="lendnodes-header">Meet my HSP :3</p>
         <GlassSurface
             :width="560"
             :height="120"
@@ -183,14 +183,12 @@
       <div class="lendnodes">
         <ElectricBorder
             :color="'#FFD700FF'"
-            :speed="0.4"
-            :chaos="0.6"
+            :speed="0.6"
+            :chaos="0.4"
             :thickness="4"
             class="electricborder"
+            onclick="window.open('https://discord.gg/j6q34d6tnA', '_blank')"
         >
-          <div>
-
-          </div>
         </ElectricBorder>
       </div>
     </div>
@@ -522,18 +520,18 @@ a:hover{
 .nuxt-word{
   color: #00dc82;
 }
-.sponsor{
+.whyblocked{
   display: block;
   align-items: center;
   padding-top: 400px;
   width: 100%;
 }
-.sponsor-top{
+.lendnodes-top{
   display: flex;
   justify-content: center;
   width: 100%;
 }
-.sponsor-header{
+.lendnodes-header{
   color: white;
   font-size: 56px;
   font-family: FreeMono;
@@ -545,12 +543,16 @@ a:hover{
   margin-top: -200px;
 }
 .electricborder{
-  background-color: black;
+  background-image: url("/lendnodes.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   margin: 0 auto;
   border-radius: 16px;
-  width: 1200px;
-  height: 400px;
+  width: 1280px;
+  height: 480px;
   pointer-events: all;
+  display: block;
 }
 </style>
 
