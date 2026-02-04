@@ -324,6 +324,5 @@ onMounted(() => {
   padding: 0.5rem; /* p-2 */
   border-radius: inherit;
   position: relative;
-  z-index: 10;
 }
 </style>

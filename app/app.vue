@@ -216,7 +216,7 @@
           textSize="2.6vw"
       />
       <GlassSurface
-          width="70vw"
+          width="72vw"
           height="12vw"
           border-radius="1vw"
           class="glass-4"/>
@@ -259,6 +259,7 @@ a:hover{
   height: 4vw;
   margin: 0 auto;
   padding-top: 1vw;
+  z-index: 100;
 }
 .glass{
   position: relative;
@@ -381,6 +382,7 @@ a:hover{
   font-size: 1.7vw;
   text-align: center;
   padding: 1.2vw;
+  z-index: 100;
 }
 .glass-1{
   position: absolute;
@@ -401,6 +403,7 @@ a:hover{
   font-family: FreeMono;
   margin-left: 33vw;
   margin-bottom: 6vw;
+  z-index: 100;
 }
 .glass-2{
   position: absolute;
@@ -435,6 +438,7 @@ a:hover{
   font-family: FreeMono;
   margin-bottom: 10vw;
   margin-left: 9.6vw;
+  z-index: 100;
 }
 .glass-3{
   position: absolute;
@@ -494,9 +498,11 @@ a:hover{
 }
 .continue-1{
   width: 100%;
+  z-index: 100;
 }
 .continue-2{
   width: 100%;
+  z-index: 100;
 }
 .glass-4{
   position: absolute;
@@ -534,6 +540,7 @@ a:hover{
   font-size: 3vw;
   font-family: FreeMono;
   margin-top: -4vw;
+  z-index: 100;
 }
 .glass-5{
   position: absolute;
