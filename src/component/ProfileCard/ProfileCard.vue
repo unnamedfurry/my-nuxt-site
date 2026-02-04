@@ -122,8 +122,8 @@ const updateCardTransform = (offsetX: number, offsetY: number, card: HTMLElement
     '--pointer-from-center': `${clamp(Math.hypot(percentY - 50, percentX - 50) / 50, 0, 1)}`,
     '--pointer-from-top': `${percentY / 100}`,
     '--pointer-from-left': `${percentX / 100}`,
-    '--rotate-x': `${round(-(centerX / 5))}deg`,
-    '--rotate-y': `${round(centerY / 4)}deg`
+    '--rotate-x': `${round(-(centerX / 15))}deg`,
+    '--rotate-y': `${round(centerY / 12)}deg`
   };
 
   Object.entries(properties).forEach(([property, value]) => {
@@ -319,11 +319,11 @@ onUnmounted(() => {
 }
 
 .pc-card {
-  height: 80svh;
-  max-height: 540px;
+  height: 24vw;
+  width: 18vw;
   display: grid;
   aspect-ratio: 0.718;
-  border-radius: var(--card-radius);
+  border-radius: 2vw;
   position: relative;
   background-blend-mode: color-dodge, normal, normal, normal;
   animation: glow-bg 12s linear infinite;
@@ -340,7 +340,7 @@ onUnmounted(() => {
   background-image:
       radial-gradient(
           farthest-side circle at var(--pointer-x) var(--pointer-y),
-          hsla(45, 100%, 85%, var(--card-opacity)) 5%,     /* светло-золотой */
+          hsla(45, 100%, 85%, var(--card-opacity)) 5%,
           hsla(45, 80%, 65%, calc(var(--card-opacity) * 0.7)) 15%,
           hsla(45, 60%, 45%, calc(var(--card-opacity) * 0.4)) 60%,
           hsla(45, 50%, 25%, 0) 100%
@@ -558,9 +558,11 @@ onUnmounted(() => {
 
 .pc-user-info {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
+  width: 86%;
+  height: 1.6vw;
+  bottom: 1vw;
+  left: 1vw;
+  right: 1vw;
   z-index: 2;
   display: flex;
   align-items: center;
@@ -568,8 +570,8 @@ onUnmounted(() => {
   background: rgba(255, 221, 0, 0.1);
   backdrop-filter: blur(30px);
   border: 1px solid rgba(255, 213, 0, 0.1);
-  border-radius: 15px;
-  padding: 12px 14px;
+  border-radius: 0.6vw;
+  padding: 0.2vw 0.2vw;
   pointer-events: auto;
 }
 
@@ -610,11 +612,11 @@ onUnmounted(() => {
 }
 
 .pc-status {
-  font-size: 14px;
+  font-size: 0.8vw;
   color: rgba(255, 221, 0, 0.7);
   line-height: 1;
   font-family: Sans;
-  padding-left: 34px;
+  padding-left: 1vw;
 }
 
 .pc-contact-btn {
@@ -653,15 +655,14 @@ onUnmounted(() => {
 .pc-details {
   width: 100%;
   position: absolute;
-  top: 3em;
+  top: 2vw;
   display: flex;
   flex-direction: column;
 }
 
 .pc-details h3 {
-  font-weight: 600;
+  font-size: 2.2vw;
   margin: 0;
-  font-size: min(5svh, 3em);
   margin: 0;
   background-image: linear-gradient(to bottom, #fff, #d4a017);
   background-size: 1em 1.5em;
@@ -672,11 +673,9 @@ onUnmounted(() => {
 }
 
 .pc-details p {
-  font-weight: 600;
+  font-size: 1vw;
   position: relative;
-  top: -12px;
   white-space: nowrap;
-  font-size: 16px;
   margin: 0 auto;
   width: min-content;
   background-image: linear-gradient(to bottom, #fff, #b8860b);
@@ -728,7 +727,7 @@ onUnmounted(() => {
   }
 
   .pc-details p {
-    font-size: 14px;
+    font-size: 2vw;
   }
 
   .pc-user-info {
@@ -752,7 +751,7 @@ onUnmounted(() => {
   }
 
   .pc-status {
-    font-size: 10px;
+    font-size: 1vw;
   }
 
   .pc-contact-btn {

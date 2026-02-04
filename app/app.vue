@@ -24,9 +24,9 @@
 
   <div class="header">
     <GlassSurface
-        :width="1440"
-        :height="64"
-        :border-radius="24"
+        width="76vw"
+        height="4vw"
+        border-radius="1.2vw"
     class="glass"/>
 
     <div class="header-content">
@@ -68,17 +68,17 @@
           class="short-about-me"
       />
       <GlassSurface
-          :width="1500"
-          :height="160"
-          :border-radius="16"
+          width="80vw"
+          height="10vw"
+          border-radius="1vw"
           class="glass-1"/>
     </div>
     <div class="my-projects">
       <p class="projects-header">My projects :3</p>
       <GlassSurface
-          :width="700"
-          :height="120"
-          :border-radius="16"
+          width="39vw"
+          height="6vw"
+          border-radius="1vw"
           class="glass-2"/>
       <div class="cards-projects">
         <ProfileCard
@@ -114,9 +114,9 @@
     <div class="my-skills">
       <p class="skills-header">My skills :3</p>
       <GlassSurface
-          :width="600"
-          :height="120"
-          :border-radius="16"
+          width="32vw"
+          height="6.6vw"
+          border-radius="1vw"
           class="glass-3"/>
       <div class="cards-skills">
         <CardSwap
@@ -127,6 +127,8 @@
             easing="elastic"
             :pause-on-hover="false"
             class="skills"
+            width="48vw"
+            height="28vw"
         >
           <template #card-0>
             <div class="card-content">
@@ -175,9 +177,9 @@
       <div class="lendnodes-top">
         <p class="lendnodes-header">Meet my HSP :3</p>
         <GlassSurface
-            :width="560"
-            :height="120"
-            :border-radius="16"
+            width="30vw"
+            height="6vw"
+            border-radius="1vw"
             class="glass-5"/>
       </div>
       <div class="lendnodes">
@@ -201,7 +203,7 @@
           :animationDuration="0.3"
           :pauseBetweenAnimations="1"
           class="continue-1"
-          textSize="6rem"
+          textSize="5vw"
       />
       <TrueFocus
           sentence="I'll add new pages whenever inspiration strikes XD"
@@ -211,12 +213,12 @@
           :animationDuration="0.3"
           :pauseBetweenAnimations="1"
           class="continue-2"
-          textSize="3rem"
+          textSize="2.6vw"
       />
       <GlassSurface
-          :width="1400"
-          :height="220"
-          :border-radius="24"
+          width="70vw"
+          height="12vw"
+          border-radius="1vw"
           class="glass-4"/>
     </div>
     <div class="end">
@@ -241,23 +243,22 @@ a:hover{
 }
 .background{
   position: fixed;
-  width: 1920px;
+  width: 100%;
   height: 100%;
 }
 .clickspark{
   position: fixed;
-  width: 1920px;
+  width: 100%;
   height: 100%;
 }
 .header{
   display: flex;
   align-items: center;
   justify-content: start;
-  background-color: transparent;
-  width: 1440px;
-  height: 64px;
+  width: 76vw;
+  height: 4vw;
   margin: 0 auto;
-  padding-top: 18px;
+  padding-top: 1vw;
 }
 .glass{
   position: relative;
@@ -271,72 +272,72 @@ a:hover{
 }
 .header-avatar{
   display: flex;
-  width: 42px;
-  height: 42px;
-  padding: 12px;
+  width: 2.4vw;
+  height: 2.4vw;
+  padding: 0.8vw;
   pointer-events: none;
 }
 .header-about{
   display: flex;
   color: gold;
-  font-size: 28px;
+  font-size: 1.4vw;
   justify-content: center;
   align-items: center;
   font-family: Sans;
   font-weight: bold;
-  padding-right: 876px;
+  margin-right: 45vw;
   pointer-events: none;
 }
 .buttons{
   display: flex;
-  padding: 8px;
-  gap: 8px;
+  padding: 0.8vw;
+  gap: 1vw;
 }
 .discord-button{
   display: flex;
   align-items: center;
   background-color: gold;
   justify-content: center;
-  width: 120px;
-  height: 40px;
-  border-radius: 12px;
-  padding: 4px;
+  width: 6.4vw;
+  height: 2.2vw;
+  border-radius: 0.6vw;
+  padding: 0.3vw;
 }
 .discord-icon{
   display: flex;
-  width: 36px;
-  height: 36px;
-  padding-right: 4px;
+  width: 1.8vw;
+  height: 1.8vw;
+  padding-right: 0.2vw;
 }
 .discord-text{
   display: flex;
-  font-size: 18px;
+  font-size: 1vw;
   font-family: Sans;
   font-weight: bolder;
-  padding-left: 4px;
+  margin-left: 0.2vw;
 }
 .github-button{
   display: flex;
   align-items: center;
   background-color: gold;
   justify-content: center;
-  width: 120px;
-  height: 40px;
-  border-radius: 12px;
-  padding: 4px;
+  width: 6.4vw;
+  height: 2.2vw;
+  border-radius: 0.6vw;
+  padding: 0.3vw;
 }
 .github-icon{
   display: flex;
-  width: 36px;
-  height: 36px;
-  padding-right: 4px;
+  width: 1.8vw;
+  height: 1.8vw;
+  padding-right: 0.2vw;
 }
 .github-text{
   display: flex;
-  font-size: 18px;
+  font-size: 1vw;
   font-family: Sans;
   font-weight: bolder;
-  padding-left: 4px;
+  margin-left: 0.2vw;
 }
 .main-content{
   position: relative;
@@ -351,16 +352,16 @@ a:hover{
   display: flex;
 }
 .welcome-1{
-  padding-left: 180px;
+  margin-left: 10vw;
   color: white;
-  font-size: 180px;
+  font-size: 10vw;
   font-family: Sans;
 }
 .welcome-2{
-  padding-top: 180px;
-  padding-left: 160px;
+  margin-top: 14vw;
+  padding-left: 8vw;
   color: white;
-  font-size: 64px;
+  font-size: 3vw;
   font-family: FreeMono;
   white-space: pre-wrap;
 }
@@ -369,17 +370,17 @@ a:hover{
 }
 .about-me{
   display: flex;
-  width: 1500px;
-  height: 162px;
+  width: 80vw;
+  height: 20vw;
   margin: 0 auto;
 }
 .short-about-me{
   position: relative;
   color: white;
   font-family: FreeMono;
-  font-size: 32px;
+  font-size: 1.7vw;
   text-align: center;
-  padding: 12px;
+  padding: 1.2vw;
 }
 .glass-1{
   position: absolute;
@@ -387,7 +388,7 @@ a:hover{
   margin: 0 auto;
 }
 .my-projects{
-  padding-top: 14%;
+  padding-top: 6vw;
   display: block;
   align-items: center;
   justify-content: center;
@@ -396,23 +397,22 @@ a:hover{
 .projects-header{
   display: flex;
   color: white;
-  font-size: 72px;
+  font-size: 4vw;
   font-family: FreeMono;
-  margin: 0 auto;
-  padding-left: 34%;
-  padding-bottom: 120px;
+  margin-left: 33vw;
+  margin-bottom: 6vw;
 }
 .glass-2{
   position: absolute;
   display: flex;
-  margin-top: -210px;
-  margin-left: 600px;
+  margin-top: -10.8vw;
+  margin-left: 30vw;
 }
 .cards-projects{
   display: flex;
   justify-content: center;
   position: relative;
-  gap: 60px;
+  gap: 1.6vw;
 }
 .bot-card{
   pointer-events: all;
@@ -421,7 +421,7 @@ a:hover{
   pointer-events: all;
 }
 .my-skills{
-  padding-top: 14%;
+  padding-top: 14vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -431,16 +431,16 @@ a:hover{
 .skills-header{
   display: flex;
   color: white;
-  font-size: 72px;
+  font-size: 4vw;
   font-family: FreeMono;
-  padding-bottom: 120px;
-  padding-left: 180px;
+  margin-bottom: 10vw;
+  margin-left: 9.6vw;
 }
 .glass-3{
   position: absolute;
   display: flex;
-  margin-top: -120px;
-  margin-left: 140px;
+  margin-top: -6vw;
+  margin-left: 8vw;
 }
 .cards-skills{
   display: flex;
@@ -454,26 +454,24 @@ a:hover{
 }
 .card-content {
   height: 100%;
-  border-bottom: 0px solid white;
   background: linear-gradient(to top, #222, #0b0b0b);
-  border-radius: 32px;
+  border-radius: 2vw;
   overflow: hidden;
 }
 .card-header {
-  padding: 12px;
+  height: 2vw;
+  padding: 1vw;
   display: flex;
   align-items: center;
   color: gray;
-  font-size: 32px;
+  font-size: 1.8vw;
   font-family: Sans;
-  border-bottom: 0px solid white;
 }
 .icon {
-  width: 60px;
-  height: 60px;
-  margin-right: 8px;
-  font-size: 1.25rem;
-  border-radius: 32px;
+  width: 2.6vw;
+  height: 2.6vw;
+  margin-right: 0.4vw;
+  border-radius: 2vw;
 }
 .card-header span {
   padding-left: 16px;
@@ -486,13 +484,13 @@ a:hover{
   height: 100%;
 }
 .continue{
-  padding-top: 210px;
+  margin-top: 20vw;
   display: block;
   width: 100%;
   pointer-events: all;
   justify-content: center;
   white-space: pre-line;
-  padding-bottom: 300px;
+  margin-bottom: 8vw;
 }
 .continue-1{
   width: 100%;
@@ -503,8 +501,8 @@ a:hover{
 .glass-4{
   position: absolute;
   display: flex;
-  margin-top: -210px;
-  margin-left: 250px;
+  margin-top: -11vw;
+  margin-left: 14vw;
   pointer-events: none;
 }
 .end{
@@ -513,7 +511,7 @@ a:hover{
   justify-content: center;
 }
 .end p{
-  font-size: 20px;
+  font-size: 1.2vw;
   font-family: FreeMono;
   color: white;
 }
@@ -523,7 +521,7 @@ a:hover{
 .whyblocked{
   display: block;
   align-items: center;
-  padding-top: 400px;
+  padding-top: 20vw;
   width: 100%;
 }
 .lendnodes-top{
@@ -533,14 +531,14 @@ a:hover{
 }
 .lendnodes-header{
   color: white;
-  font-size: 56px;
+  font-size: 3vw;
   font-family: FreeMono;
-  margin-top: -166px;
+  margin-top: -4vw;
 }
 .glass-5{
   position: absolute;
   display: flex;
-  margin-top: -200px;
+  margin-top: -5.4vw;
 }
 .electricborder{
   background-image: url("/lendnodes.png");
@@ -548,11 +546,12 @@ a:hover{
   background-position: center;
   background-size: contain;
   margin: 0 auto;
-  border-radius: 16px;
-  width: 1280px;
-  height: 480px;
+  border-radius: 1vw;
+  width: 74vw;
+  height: 28vw;
   pointer-events: all;
   display: block;
+  margin-top: 3vw;
 }
 </style>
 
